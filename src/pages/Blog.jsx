@@ -8,7 +8,7 @@ export default function Blog() {
 
   useEffect(() => {
     api.get('/blog').then((res) => {
-      setPosts(res.data);
+      setPosts(Array.isArray(res.data) ? res.data : []);
     }).catch(console.error).finally(() => setLoading(false));
   }, []);
 

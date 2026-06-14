@@ -22,7 +22,7 @@ export default function TestimonialsPage() {
   const fetchTestimonials = async () => {
     try {
       const res = await api.get('/testimonials?approved=true');
-      setTestimonials(res.data);
+      setTestimonials(Array.isArray(res.data) ? res.data : []);
     } catch (err) {
       console.error(err);
     } finally {
@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
     };
   }, []);
 
-  const filteredTestimonials = testimonials.filter((t) => {
+  const filteredTestimonials = (Array.isArray(testimonials) ? testimonials : []).filter((t) => {
     if (filterType === 'all') return true;
     if (filterType === 'college') return !!t.collegeName;
     if (filterType === 'corporate') return !!t.company && !t.collegeName;

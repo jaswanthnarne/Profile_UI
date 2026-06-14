@@ -293,17 +293,17 @@ export default function Home() {
   const fetchData = async () => {
     try {
       const [companiesRes, testimonialsRes, coursesRes, projectsRes, momentsRes] = await Promise.all([
-        api.get('/companies'),
-        api.get('/testimonials?approved=true'),
-        api.get('/courses'),
-        api.get('/gallery'),
-        api.get('/moments')
+        api.get('/companies').catch(() => ({ data: [] })),
+        api.get('/testimonials?approved=true').catch(() => ({ data: [] })),
+        api.get('/courses').catch(() => ({ data: [] })),
+        api.get('/gallery').catch(() => ({ data: [] })),
+        api.get('/moments').catch(() => ({ data: [] }))
       ]);
-      setCompanies(companiesRes.data);
-      setTestimonials(testimonialsRes.data.slice(0, 3));
-      setCourses(coursesRes.data);
-      setProjects(projectsRes.data);
-      setClassroomMoments(momentsRes.data);
+      setCompanies(Array.isArray(companiesRes.data) ? companiesRes.data : []);
+      setTestimonials(Array.isArray(testimonialsRes.data) ? testimonialsRes.data.slice(0, 3) : []);
+      setCourses(Array.isArray(coursesRes.data) ? coursesRes.data : []);
+      setProjects(Array.isArray(projectsRes.data) ? projectsRes.data : []);
+      setClassroomMoments(Array.isArray(momentsRes.data) ? momentsRes.data : []);
     } catch (err) {
       console.error(err);
     } finally {

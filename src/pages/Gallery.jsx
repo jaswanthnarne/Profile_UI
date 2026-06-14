@@ -202,11 +202,11 @@ export default function Gallery() {
   const fetchData = async () => {
     try {
       const [companiesRes, projectsRes] = await Promise.all([
-        api.get('/companies'),
-        api.get('/gallery'),
+        api.get('/companies').catch(() => ({ data: [] })),
+        api.get('/gallery').catch(() => ({ data: [] })),
       ]);
-      setCompanies(companiesRes.data);
-      setProjects(projectsRes.data);
+      setCompanies(Array.isArray(companiesRes.data) ? companiesRes.data : []);
+      setProjects(Array.isArray(projectsRes.data) ? projectsRes.data : []);
     } catch (err) {
       console.error(err);
     } finally {
@@ -225,8 +225,8 @@ export default function Gallery() {
   }, []);
 
   const filteredProjects = selectedCompany === 'all'
-    ? projects
-    : projects.filter((p) => p.companyId?._id === selectedCompany);
+    ? (Array.isArray(projects) ? projects : [])
+    : (Array.isArray(projects) ? projects : []).filter((p) => p.companyId?._id === selectedCompany);
 
   return (
     <div className="pt-20 bg-surface-50 min-h-screen">

@@ -71,7 +71,7 @@ export default function CoursesPage() {
     const fetchCourses = async () => {
       try {
         const res = await api.get('/courses');
-        setCourses(res.data);
+        setCourses(Array.isArray(res.data) ? res.data : []);
       } catch (err) {
         console.error('Error fetching courses:', err);
       } finally {
@@ -87,7 +87,7 @@ export default function CoursesPage() {
     };
   }, []);
 
-  const displaySkills = courses.length > 0 ? courses : defaultSkills;
+  const displaySkills = Array.isArray(courses) && courses.length > 0 ? courses : defaultSkills;
 
   return (
     <div className="pt-20 bg-surface-50 min-h-screen">
