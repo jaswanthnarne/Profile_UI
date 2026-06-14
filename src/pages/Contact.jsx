@@ -86,7 +86,7 @@ export default function Contact() {
             <div className="card p-8 bg-white shadow-soft">
               <h2 className="font-display text-2xl font-bold text-surface-900 mb-6">Contact Channels</h2>
               <div className="space-y-6">
-                {contactItems.map(({ icon, label, value }) => (
+                {contactItems.map(({ icon, label, value, link }) => (
                   <div key={label} className="flex items-start gap-4 group">
                     <div className="w-11 h-11 bg-brand-50 border border-brand-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-103 transition-transform duration-200">
                       {icon}
