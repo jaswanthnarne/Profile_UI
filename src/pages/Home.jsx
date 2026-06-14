@@ -526,9 +526,9 @@ export default function Home() {
               {heroActiveTab === 'metrics.yaml' && (
                 <pre className="space-y-1">
                   <div><span className="text-blue-400">performance:</span></div>
-                  <div>  <span className="text-sky-400">students_upskilled:</span> <span className="text-amber-400">12000</span></div>
+                  <div>  <span className="text-sky-400">students_upskilled:</span> <span className="text-amber-400">1200</span></div>
                   <div>  <span className="text-sky-400">corporate_cohorts:</span> <span className="text-amber-400">45</span></div>
-                  <div>  <span className="text-sky-400">trainers_certified:</span> <span className="text-amber-400">500</span></div>
+                  <div>  <span className="text-sky-400">trainers_certified:</span> <span className="text-amber-400">50</span></div>
                   <div><span className="text-blue-400">metrics:</span></div>
                   <div>  <span className="text-sky-400">nps_score:</span> <span className="text-emerald-400">"9.2 / 10"</span></div>
                   <div>  <span className="text-sky-400">student_pass_rate:</span> <span className="text-emerald-400">"98.4%"</span></div>
