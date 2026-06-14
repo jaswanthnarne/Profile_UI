@@ -166,9 +166,8 @@ function ProjectCard({ project }) {
                   {project.media.map((_, i) => (
                     <span
                       key={i}
-                      className={`w-1.5 h-1.5 rounded-full transition-all ${
-                        activeMediaIdx === i ? 'bg-white w-2.5' : 'bg-white/50'
-                      }`}
+                      className={`w-1.5 h-1.5 rounded-full transition-all ${activeMediaIdx === i ? 'bg-white w-2.5' : 'bg-white/50'
+                        }`}
                     />
                   ))}
                 </div>
@@ -424,25 +423,25 @@ export default function Home() {
 
   return (
     <div className="pt-20 bg-slate-50 min-h-screen">
-      
+
       {/* 1. HERO SECTION (Dynamic Visuals & Interactive Tabs) */}
       <section className="section flex flex-col lg:flex-row items-center gap-12 md:gap-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl -ml-20 -mt-20 pointer-events-none" />
-        
+
         <div className="flex-1 animate-slide-up relative z-10">
           <div className="inline-flex items-center gap-2.5 bg-brand-50 border border-brand-100 px-4 py-1.5 rounded-full text-xs text-brand-700 font-extrabold mb-6 shadow-sm">
             <span className="w-2.5 h-2.5 bg-brand-600 rounded-full animate-pulse" />
             Empowering EdTech, Corporates & Academics
           </div>
-          
+
           <h1 className="font-display text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 mb-6">
             Bridging Academics and <span className="bg-gradient-to-r from-brand-600 to-sky-600 bg-clip-text text-transparent">Enterprise</span> Capability
           </h1>
-          
+
           <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-            I'm <strong className="text-slate-800 font-bold">Jaswanth Narne</strong>, a senior technical consultant executing highly effective code bootcamps for EdTech academies, specialized workshops for corporate engineering teams, and Train-the-Trainer (TTT) frameworks.
+            I'm <strong className="text-slate-800 font-bold">Jaswanth Narne</strong>, a Technical Consultant executing highly effective code bootcamps for EdTech academies, specialized workshops for corporate engineering teams, and Train-the-Trainer (TTT) frameworks.
           </p>
-          
+
           <div className="flex flex-wrap gap-4">
             <Link to="/contact" id="hero-cta-contact" className="btn-primary">
               Book a Training
@@ -455,9 +454,9 @@ export default function Home() {
           {/* Glowing Metrics grid */}
           <div className="grid grid-cols-3 gap-4 mt-12 max-w-lg">
             {[
-              { value: '12K+', label: 'Students' },
+              { value: '1200+', label: 'Students' },
               { value: '45+', label: 'Cohorts' },
-              { value: '500+', label: 'Trainers' },
+              { value: '50+', label: 'Trainers' },
             ].map(({ value, label }) => (
               <div key={label} className="bg-white border border-slate-200 px-4 py-4 rounded-2xl shadow-soft hover:shadow-card hover:border-brand-200 transition-all duration-300">
                 <div className="font-display text-2xl md:text-3xl font-extrabold text-brand-600 leading-none">{value}</div>
@@ -470,7 +469,7 @@ export default function Home() {
         {/* Hero Interactive IDE Mockup (Right Column) */}
         <div className="flex-shrink-0 w-full max-w-lg lg:w-[480px] relative flex items-center justify-center animate-scale-in">
           <div className="absolute inset-0 bg-brand-100/50 rounded-full blur-3xl pointer-events-none" />
-          
+
           <div className="relative bg-slate-900 text-slate-200 w-full rounded-2xl overflow-hidden shadow-elevated border border-slate-800 flex flex-col h-[380px]">
             {/* VSCode-style Header */}
             <div className="bg-slate-950 px-4 py-3 flex items-center justify-between border-b border-slate-800 select-none">
@@ -494,11 +493,10 @@ export default function Home() {
                   key={tab.name}
                   type="button"
                   onClick={() => setHeroActiveTab(tab.name)}
-                  className={`px-4 py-2 font-mono flex items-center gap-1.5 border-r border-slate-800 transition-colors ${
-                    heroActiveTab === tab.name
-                      ? 'bg-slate-900 text-white font-bold border-b border-b-brand-500'
-                      : 'bg-slate-950/60 text-slate-500 hover:text-slate-300'
-                  }`}
+                  className={`px-4 py-2 font-mono flex items-center gap-1.5 border-r border-slate-800 transition-colors ${heroActiveTab === tab.name
+                    ? 'bg-slate-900 text-white font-bold border-b border-b-brand-500'
+                    : 'bg-slate-950/60 text-slate-500 hover:text-slate-300'
+                    }`}
                 >
                   <span className={
                     tab.type === 'json' ? 'text-amber-500' : tab.type === 'yaml' ? 'text-emerald-500' : 'text-sky-500'
@@ -569,7 +567,7 @@ export default function Home() {
             {/* Gradient Mask Overlays */}
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
-            
+
             {/* The Rolling Marquee Wrapper */}
             <div className="animate-marquee flex items-center gap-6 py-2">
               {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, idx) => (
@@ -639,14 +637,14 @@ export default function Home() {
             {programs.map(({ title, subtitle, desc, highlight, icon }) => (
               <div key={title} className="card-hover p-8 group flex flex-col h-full bg-white border border-slate-200 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-brand-500/5 rounded-full blur-2xl pointer-events-none" />
-                
+
                 <div className="w-12 h-12 bg-brand-50 border border-brand-100 text-brand-650 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300 shadow-sm">
                   {icon}
                 </div>
                 <p className="text-brand-600 text-[10px] font-extrabold uppercase tracking-widest mb-1">{subtitle}</p>
                 <h3 className="font-display text-xl font-extrabold text-slate-900 mb-4">{title}</h3>
                 <p className="text-slate-650 text-xs md:text-sm leading-relaxed mb-6 flex-1">{desc}</p>
-                
+
                 <div className="border-t border-slate-150 pt-4 mt-auto">
                   <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Key Deliverables:</p>
                   <p className="text-xs text-slate-800 font-bold mt-1 leading-snug">{highlight}</p>
@@ -673,11 +671,10 @@ export default function Home() {
               key={cat}
               type="button"
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${
-                activeCategory === cat
-                  ? 'bg-brand-600 text-white shadow-soft scale-[1.02]'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
-              }`}
+              className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${activeCategory === cat
+                ? 'bg-brand-600 text-white shadow-soft scale-[1.02]'
+                : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                }`}
             >
               {cat}
             </button>
@@ -751,11 +748,10 @@ export default function Home() {
                 key={campus}
                 type="button"
                 onClick={() => setMomentsCategory(campus)}
-                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${
-                  momentsCategory === campus
-                    ? 'bg-brand-600 text-white shadow-soft scale-[1.02]'
-                    : 'bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100'
-                }`}
+                className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${momentsCategory === campus
+                  ? 'bg-brand-600 text-white shadow-soft scale-[1.02]'
+                  : 'bg-slate-50 border border-slate-200 text-slate-600 hover:bg-slate-100'
+                  }`}
               >
                 {campus === 'All' ? 'All Campuses' : campus}
               </button>
@@ -847,7 +843,7 @@ export default function Home() {
                 Verified feedback logs collected from engineering bootcamps, college programs, and educator workshops.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t) => (
                 <div
@@ -860,7 +856,7 @@ export default function Home() {
                       "{t.text}"
                     </p>
                   </div>
-                  
+
                   <div className="border-t border-slate-150 pt-4 mt-6 flex items-center gap-3">
                     <div className="w-9 h-9 bg-brand-50 border border-brand-100 text-brand-600 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">
                       {t.clientName.charAt(0)}
@@ -898,7 +894,7 @@ export default function Home() {
         <div className="bg-slate-900 text-white rounded-3xl shadow-elevated p-10 md:p-16 text-center relative overflow-hidden border border-slate-800">
           <div className="absolute top-0 right-0 w-80 h-80 bg-brand-600/15 rounded-full mix-blend-screen filter blur-3xl opacity-30 -mr-20 -mt-20 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-600/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 -ml-20 -mb-20 pointer-events-none" />
-          
+
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-extrabold mb-4 text-white leading-tight">
               Launch a High-Retention Cohort
@@ -917,7 +913,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Lightbox Overlay */}
       {lightbox && (
         <div
@@ -935,7 +931,7 @@ export default function Home() {
             >
               ✕
             </button>
-            
+
             <div className="bg-slate-950 flex items-center justify-center p-4 relative aspect-video select-none min-h-[300px] md:min-h-[450px]">
               {lightbox.items && lightbox.items[lightbox.index] ? (
                 <>
