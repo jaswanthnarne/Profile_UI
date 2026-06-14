@@ -34,7 +34,8 @@ export default function Contact() {
         </svg>
       ),
       label: 'Email Address',
-      value: 'narnejaswanth83@gmail.com'
+      value: 'narnejaswanth83@gmail.com',
+      link: 'mailto:narnejaswanth83@gmail.com'
     },
     {
       icon: (
@@ -43,7 +44,8 @@ export default function Contact() {
         </svg>
       ),
       label: 'Phone Number',
-      value: '+91 98482 18418'
+      value: '+91 98482 18418',
+      link: 'tel:+919848218418'
     },
     {
       icon: (
@@ -91,7 +93,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-surface-500 text-xs font-semibold uppercase tracking-wider mb-0.5">{label}</p>
-                      <p className="text-surface-800 font-bold text-sm md:text-base">{value}</p>
+                      {link ? (
+                        <a href={link} className="text-surface-800 font-bold text-sm md:text-base hover:text-brand-600 hover:underline transition-colors duration-200">
+                          {value}
+                        </a>
+                      ) : (
+                        <p className="text-surface-800 font-bold text-sm md:text-base">{value}</p>
+                      )}
                     </div>
                   </div>
                 ))}

@@ -538,9 +538,9 @@ export default function Home() {
               {heroActiveTab === 'consultant.config' && (
                 <pre className="space-y-1">
                   <div><span className="text-pink-500">[profile]</span></div>
-                  <div><span className="text-sky-400">email</span> = <span className="text-emerald-400">narnejaswanth83@gmail.com</span></div>
+                  <div><span className="text-sky-400">email</span> = <a href="mailto:narnejaswanth83@gmail.com" className="text-emerald-400 hover:underline">narnejaswanth83@gmail.com</a></div>
                   <div><span className="text-sky-400">location</span> = <span className="text-emerald-400">Guntur, AP, India</span></div>
-                  <div><span className="text-sky-400">phone</span> = <span className="text-emerald-400">+91 9848218418</span></div>
+                  <div><span className="text-sky-400">phone</span> = <a href="tel:+919848218418" className="text-emerald-400 hover:underline">+91 9848218418</a></div>
                   <div><span className="text-sky-400">availability</span> = <span className="text-amber-400">Open to Bootcamps & TTT</span></div>
                 </pre>
               )}
